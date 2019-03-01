@@ -3,17 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
-<script type="text/javascript">
+    
+    <div class="jumbotron">
+        <h1 class="display-4">Tropical Fruit</h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+        <p></p>
+            
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <p> Press any key to get started!
+                <br>
+                Think of tropical fruits that match the number of options - then begin to type your guess!
+            </p>
+        </div>
+   </div>
+
+    
+    <script type="text/javascript">  
+
+    // PRESS ANY KEY TO GET STARTED
+    // .onkeyup()
+
+    var words = ["guava", "papaya", "mango"];
+
+    var word = words[Math.floor(Math.random() * words.length)];
+
+    // var computerChoiceText = answerArray.getElementById("computerchoice-text");
+
+    var answerArray = [];
+  for (var i = 0; i < word.length; i++) {
+ answerArray[i] = "_";
+ }
+
+var remainingLetters = word.length;
+console.log(word, answerArray, remainingLetters);
+
+var wrong = [];
+
+document.onkeyup = function(event) {
+    // console.log(event.key);
+    console.log(word.indexOf(event.key))
+    //if letter pressed is in word, do something
+    if (word.indexOf(event.key) >-1 ){
+        //find correct spot in answerArray, and update
+    }
+    //if letter pressed isnt in word, do something else
+    else{
+        //add wrong letter to wrong array
+    }
+}
+
+    // RUN COMMANDS
+
+
     
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-</script>
+
+
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 </body>
 </html>
