@@ -1,172 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class= "p-3 mb-2 bg-warning text-dark">
-    <div class="jumbotron">
-        <h1 class="display-4">Tropical Fruit</h1>
-        <p class="lead"></p>
-        <hr class="my-4">
-        <p></p>
-    </div>        
+    <div class="p-3 mb-2 bg-warning text-dark">
+        <div class="jumbotron">
+            <h1 class="display-4">Tropical Fruit</h1>
+            <p class="lead"></p>
+            <hr class="my-4">
+            <p></p>
+        </div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-            <p> Press any key to get started!
+                <p> Press any key to get started!
+                    <br>
+                    Think of tropical fruits that match the number of options - then begin to type your guess!
+                </p>
                 <br>
-                Think of tropical fruits that match the number of options - then begin to type your guess!
-            </p>
-            <br>
-            <br>
-            <h2 id="dashes"></h2>
-            <p id="guesses"></p>
-            <br>
-            <br>
-            <p id="lives"></p>
-        
+                <br>
+                <h2 id="dashes"></h2>
+                <p id="guesses"></p>
+                <br>
+                <br>
+                <p id="lives"></p>
+
+            </div>
         </div>
-        </div>
-   </div>
-
-    
-    <script type="text/javascript">  
-
-    //VARIABLES 
-
-    var words = ["guava", "papaya", "mango", "pineapple", "kiwi", "lychee"];
-    var wordsIndex = 0;
-    var lives = 8;
-    var remainingGuesses;
-    var word = words[Math.floor(Math.random() * words.length)];
-    var wrong = [];
+    </div>
 
 
-// PRESS ANY KEY TO GET STARTED - would this be a function parent of renderWord?
-    
-     // Calling functions to start the game.
-    // renderWord();
-    // updateScore();
+    <script src="assets/javascript/game.js">
 
-// When user presses a key, game must begin
-    function begin() {
-        event.key
-    }
-
-    // function renderWord() {
-    //   // If there are still more words, render the next one.
-    //   if (wordsIndex <= (words.length - 1)) {
-    //     document.querySelector("#word").innerHTML = words[wordsIndex].q;
-    //   }
-    //   // If there aren't, render the end game screen.
-    //   else {
-    //     document.querySelector("#word").innerHTML = "Game Over!";
-    //     document.querySelector("#score").innerHTML = "Final Score: " + score + " out of " + words.length;
-    //   }
-    // }
-
-     // If there are no more words, stop the function.
-    //  if (wordIndex === words.length) {
-    //     return;
-    //   }
-
-     // Function that updates the score...
-    //  function updateScore() {
-    //   document.querySelector("#score").textContent = "Score: " + score;
-    // }
-
-
-    var answerArray = [];
-  for (var i = 0; i < word.length; i++) {
- answerArray[i] = "_";
- }
-
-//  To display dashes on viewport
-
-var dashesh2 = document.getElementById("dashes");
-var guessesp = document.getElementById("guesses");
-var livesP = document.getElementById("lives");
-// .join('') takes away whatever is between ()
-dashesh2.textContent = answerArray.join(' ');
-guessesp.textContent = wrong.join(' ');
-livesP.textContent = lives;
-
-
-
-var remainingLetters = word.length;
-console.log(word, answerArray, remainingLetters);
-
-
-
-
-document.onkeyup = function(event) {
-    // turns user's entry to lowercase
-    var userInput = event.key.toLowerCase();
-    // console.log(event.key);
-    console.log(word.indexOf(event.key))
-    //if letter pressed is in word, do something
-    if (word.indexOf(event.key) >-1 ){
-        for (var i = 0; i < word.length; i++) {
-            // go through each _ and see if a letter is applied
-            if (event.key === word[i]){
-                // only triggered if letter pushed matches letter in word
-                // var correctLetterIndex = word.indexOf(event.key);
-                // answerArray[correctLetterIndex] = event.key; 
-                answerArray[i] = event.key;
-                dashesh2.textContent = answerArray.join(' ');
-                console.log('yay!', answerArray);    
-            }
-        }
-    } 
-       
-    //if letter pressed isnt in word, do something else decrease lives 
-    else{
-       wrong.push(event.key);
-       console.log('wrong!', wrong)
-       guessesp.textContent = wrong.join(' ');
-        lives--;
-       console.log('lives left: ' + lives)
-       livesP.textContent = lives;
-        if (lives === 0) {
-            alert("YOU LOSE!");
-        }
-    }
-}
-
-// Provide countdown in wrong array - it reaches 15 - display "Game Over"
-    // if ()
-// document.getElementById()
-
-// Continue  until all words have been guessed correctly. 
-
- // If they guess the correct answer, increase and update score.
-    // if (userInput === words[wordsIndex].a) {
-        
-    //       score++;
-    //       updateScore();
-    //     }
-
-// Make sure game provides new word to guess
-
-
-    
 
 
 
 
     </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <div class ="row">
+            <div class="col-sm-12">
+                <div class="d-flex justify-content-center">
+                    <img src="assets/images/fruit.jpg" alt="Tropical Fruit" height="800" width="1750">
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
