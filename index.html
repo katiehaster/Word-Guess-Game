@@ -8,37 +8,52 @@
     <title>Word Guess</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-    <div class="p-3 mb-2 bg-warning text-dark">
+    <!-- <div class="p-3 mb-2 bg-warning text-dark">
         <div class="jumbotron">
             <h1 class="display-4">Tropical Fruit</h1>
             <p class="lead"></p>
             <hr class="my-4">
             <p></p>
         </div>
-    </div>
+    </div> -->
+
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <p> Press any key to get started!
-                    <br>
-                    Think of tropical fruits that match the number of options - then begin to type your guess!
-                </p>
-                <br>
-                <br>
-                <h2 id="dashes"></h2>
-                <p id="guesses"></p>
-                <br>
-                <br>
-                <p id="lives"></p>
-
+        <div class="top-box">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>
+                        <h2> Word Guess - Tropical Fruit!</h2>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
+
+        <div id="main-box">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p> Press any key to get started!
+                        <br>
+                        Think of tropical fruits that match the number of options - then begin to type your guess!
+                    </p>
+                    <br>
+                    <br>
+                    <h2 id="dashes"></h2>
+                    <p id="guesses"></p>
+                    <br>
+                    <br>
+                    <p id="lives"></p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="assets/javascript/game.js">
 
@@ -48,13 +63,13 @@
 
     </script>
 
-        <div class ="row">
+    <!-- <div class ="row">
             <div class="col-sm-12">
                 <div class="d-flex justify-content-center">
                     <img src="assets/images/fruit.jpg" alt="Tropical Fruit" height="800" width="1750">
                 </div>
             </div>
-        </div>
+        </div> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

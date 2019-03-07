@@ -1,0 +1,24 @@
+body{
+    background-image: url("../images/fruit.jpg");
+}
+
+.top-box{
+    margin-top: 60px;
+    background-color:#ffae42;
+    border: solid rgb(255, 0, 157) 10px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+#main-box{
+    background-color: white;
+    border: solid rgb(255, 0, 157) 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+/* #jumbotron {
+    background-color: yellow;
+    color: rgb(255, 0, 157);
+} */
