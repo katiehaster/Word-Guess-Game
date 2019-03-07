@@ -4,18 +4,22 @@ body{
 
 .top-box{
     margin-top: 60px;
-    background-color:#ffae42;
-    border: solid rgb(255, 0, 157) 10px;
+    background-color:rgb(255, 0, 157);
+    border: solid #ffae42 10px;
     padding: 10px;
     color: white;
     text-align: center;
 }
 
 #main-box{
-    background-color: white;
+    background-color: #ffae42;
+    opacity: .95;
     border: solid rgb(255, 0, 157) 10px;
     padding: 25px;
     text-align: center;
+    font: 24px bold;
+    color: white;
+    
 }
 
 /* #jumbotron {
